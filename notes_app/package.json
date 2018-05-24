@@ -1,0 +1,15 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "This is my practice of Javascript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yan",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "yargs": "^4.7.1"
+  }
+}
