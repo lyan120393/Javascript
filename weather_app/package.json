@@ -1,0 +1,14 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "Get location from google map api to weather api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Longyituo Yan",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}
