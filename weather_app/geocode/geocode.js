@@ -16,8 +16,8 @@ let geocode = (address, callback) => {
             //如果一切OK,那么自然给callback的第一个参数设置为undefined,并且给予第二个参数resualts对象的属性.
             callback(undefined, {
                 address: body.results[0].formatted_address,
-                longitude: body.results[0].geometry.location.lng,
                 latitude: body.results[0].geometry.location.lat,
+                longitude: body.results[0].geometry.location.lng,
             })
          // console.log(JSON.stringify(response, undefined, 2));
         }else{
@@ -27,6 +27,27 @@ let geocode = (address, callback) => {
     
 };
 
+let getweather = (lat, lng, callback) => {
+    request({
+        url : `https://api.darksky.net/forecast/4d64296d2008aec295648001c4097053/${lat},${lng}`,
+        json : true,
+    }, (error, response, body) => {
+        if (error){
+            callback('Unable to connect Dark Sky APIs server.');
+        }else if(response.statusCode === 400){
+            callback(`Unable to fetch weather Info from Dark Sky APIs.`);
+        }else{
+            callback(undefined, {
+                summary : body.currently.summary,
+                temperature : body.currently.temperature,
+                windSpeed : body.currently.windSpeed,
+                visibility : body.currently.visibility,
+            });
+        };
+    });
+}
+
 module.exports = {
     geocode,
+    getweather,
 };

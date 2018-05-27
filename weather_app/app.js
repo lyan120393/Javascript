@@ -24,5 +24,14 @@ geocode.geocode(argv.address,(errorMessage, resualts) => {
         // console.log(`Longitude is ${resualts.longitude}`);
         // console.log(`Latitude is ${resualts.latitude}`);
         console.log(JSON.stringify(resualts, undefined, 2));
+        geocode.getweather(resualts.latitude, resualts.longitude, (WeatherErrorMessage, weatherInfo) =>{
+            if (WeatherErrorMessage){
+                console.log(WeatherErrorMessage);
+            }else{
+                console.log(JSON.stringify(weatherInfo, undefined, 2));
+            }
+        })
     }
 });
+
+
