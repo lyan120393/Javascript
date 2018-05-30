@@ -11,12 +11,12 @@ let username = (user, fullname) => {
 let asyncSquare = (a, callback) => {
     setTimeout(() => {
         callback(a * a);
-    }, 2000)
+    }, 50)
 };
 let asyncAdd = (a, b, callback) => {
     setTimeout(() => {
         callback(a + b);
-    }, 2000);
+    }, 50);
 };
 
  
